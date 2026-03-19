@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: overhaul_project_app
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: always
+
+  # Si usas una base de datos local en Docker, añade el servicio aquí
