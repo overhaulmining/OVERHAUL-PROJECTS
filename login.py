@@ -47,7 +47,7 @@ def validarUsuario(usuario,clave):
     )
     
     # Filtramos el dataframe para buscar el usuario y la clave
-    print(response.data)
+    # print(response.data)
     if response.data:
         # Si el usuario y la clave existen, retornamos True
         # Set a cookie
