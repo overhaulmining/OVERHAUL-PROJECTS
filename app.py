@@ -2,8 +2,7 @@ import streamlit as st
 from db import supabase
 import login as login
 
-archivo=__file__.split("\\")[-1]
-login.generarLogin(archivo)
+login.generarLogin("app.py")
 if 'usuario' in st.session_state:
     st.set_page_config(page_title="Dashboard", layout="wide")
     st.header(':orange[Dashboard]')
