@@ -4,11 +4,18 @@ import pandas as pd  # Librería para manipulación y análisis de datos. Instal
 from streamlit_cookies_controller import CookieController # Librería para manejar cookies en Streamlit. Instalación: pip install streamlit-cookies-controller
 from db import supabase
 from rol_pages import pages_roles
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Creamos una instancia de CookieController
 controller = CookieController()
-DEV = True
-rol_dev="sys"
+
+dev_env_value = os.getenv('DEV', 'False')  # 'False' es el valor por defecto si no existe
+# Convertimos a Booleano real comparando el string
+DEV = dev_env_value.lower() in ('true', '1', 't', 'y', 'yes')
+
+rol_dev="admin"
 
 def restaurar_sesion():
     usuario_cookie = controller.get("usuario")
