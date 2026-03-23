@@ -14,8 +14,8 @@ if 'usuario' in st.session_state:
         st.header("Cursos")
 
     with col2:
-        if st.button("➕ Empresa"):
-            st.switch_page("pages/Crear_OT.py")
+        if st.button("➕ Curso"):
+            st.switch_page("pages/curso_nuevo.py")
             
     response = (
         supabase

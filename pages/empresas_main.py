@@ -15,7 +15,7 @@ if 'usuario' in st.session_state:
 
     with col2:
         if st.button("➕ Empresa"):
-            st.switch_page("pages/Crear_OT.py")
+            st.switch_page("pages/empresa_nuevo.py")
             
     response = (
         supabase
