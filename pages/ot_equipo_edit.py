@@ -8,7 +8,7 @@ from pages.nuevo_equipo import agregar_nuevo_equipo
 
 login.generarLogin("pages/ot_equipo_main.py")
 
-if 'usuario' in st.session_state:
+if login.existUser():
 
     st.set_page_config(page_title="Editar OT", layout="wide")
 

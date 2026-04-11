@@ -5,7 +5,7 @@ import pandas as pd
 
 login.generarLogin("pages/ot_equipo_main.py")
 
-if 'usuario' in st.session_state:
+if login.existUser():
 
     st.set_page_config(page_title="Orden Trabajo Equipo", layout="wide")
     

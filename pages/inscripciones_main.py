@@ -6,7 +6,7 @@ from streamlit_redirect import redirect
 
 login.generarLogin("pages/inscripciones_main.py")
 
-if 'usuario' in st.session_state:
+if login.existUser():
     st.set_page_config(page_title="Inscripciones", layout="wide")
 
     col1, col2 = st.columns([4,1])

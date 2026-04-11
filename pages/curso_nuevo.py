@@ -2,13 +2,14 @@ import streamlit as st
 from db import supabase
 from datetime import date
 import login as login
+from login import existUser
 
 # Asumiendo que ya tienes el login cargado arriba
 login.generarLogin("pages/curso_nuevo.py")
 
 st.header("📝 Registrar Nuevo Curso")
 
-if 'usuario' in st.session_state:
+if existUser():
     with st.form("form_curso_nuevo", clear_on_submit=True):
         # Fila 1: Nombre y Título
         col1, col2 = st.columns(2)

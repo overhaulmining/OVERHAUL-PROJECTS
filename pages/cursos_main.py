@@ -2,10 +2,11 @@ import streamlit as st
 from db import supabase
 import login as login
 import pandas as pd
+from login import existUser
 
 login.generarLogin("pages/cursos_main.py")
 
-if 'usuario' in st.session_state:
+if existUser():
     st.set_page_config(page_title="Empresas", layout="wide")
 
     col1, col2 = st.columns([4,1])

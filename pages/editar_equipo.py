@@ -1,6 +1,7 @@
 import streamlit as st
 from db import supabase
 import uuid
+from login import existUser
 
 @st.dialog("✏️ Editar Equipo")
 def editar_ot():

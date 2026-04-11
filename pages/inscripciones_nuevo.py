@@ -55,17 +55,3 @@ with st.form("form_inscripcion", clear_on_submit=True):
                 st.error(f"Error al guardar: {e}")
         else:
             st.warning("Por favor, completa los campos obligatorios (DNI, Nombres, Apellidos).")
-
-# --- Visualización de la Tabla ---
-# st.divider()
-# st.subheader("📋 Lista de Inscritos")
-
-# res_lista = supabase.table("inscripciones_izaje").select("*").order("fecha_programada").execute()
-
-# if res_lista.data:
-#     df_inscritos = pd.DataFrame(res_lista.data)
-#     # Reordenar y renombrar para que se vea mejor
-#     df_inscritos = df_inscritos[['dni', 'nombres', 'apellidos', 'curso', 'empresa', 'telefono', 'fecha_programada']]
-#     st.dataframe(df_inscritos, use_container_width=True, hide_index=True)
-# else:
-#     st.info("No hay inscripciones registradas aún.")

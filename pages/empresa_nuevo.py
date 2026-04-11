@@ -3,11 +3,12 @@ import pandas as pd
 from streamlit_redirect import redirect
 from db import supabase
 import streamlit as st
+from login import existUser
 
 login.generarLogin("pages/empresa_nuevo.py")
 
 from datetime import date
-if 'usuario' in st.session_state:
+if existUser():
 
     with st.form("form_empresa_nuevo", clear_on_submit=True):
         col1, col2 = st.columns(2)

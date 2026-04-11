@@ -10,7 +10,8 @@ from pages.nuevo_equipo import agregar_nuevo_equipo
 
 login.generarLogin("pages/ot_persona_edit.py")
 
-if 'usuario' in st.session_state:
+if login.existUser():
+    
     st.set_page_config(page_title="Editar OT", layout="wide")
     
     params = st.experimental_get_query_params() if hasattr(st, "experimental_get_query_params") else st.query_params

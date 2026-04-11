@@ -2,10 +2,11 @@ import streamlit as st
 from db import supabase
 import login as login
 import pandas as pd
+from login import existUser
 
 login.generarLogin("pages/facturas_ot.py")
 
-if 'usuario' in st.session_state:
+if existUser():
     params = st.experimental_get_query_params() if hasattr(st, "experimental_get_query_params") else st.query_params
 
     id_ot = params.get("id_ot", [""])       # devuelve '1'
